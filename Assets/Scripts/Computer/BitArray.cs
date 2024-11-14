@@ -10,13 +10,6 @@ public class BitArray : MonoBehaviour
 
     private void Start() =>
         UpdateResultCharText();
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-            AddOne();
-        if (Input.GetKeyDown(KeyCode.R))
-            Return();
-    }
     public void ResetArray() =>
         _bits = new bool[6];
     public void AddOne()
@@ -27,7 +20,6 @@ public class BitArray : MonoBehaviour
     }
     public void Return()
     {
-        print($"Result char: {BitsToResultChar()}");
         UpdateArrayText();
         UpdateResultCharText();
         ResetArray();
