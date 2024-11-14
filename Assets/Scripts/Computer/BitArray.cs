@@ -4,6 +4,7 @@ using TMPro;
 
 public class BitArray : MonoBehaviour
 {
+    [SerializeField] private Monitor _monitor;
     [SerializeField] private TMP_Text _arrayText, _resultText;
     private char[] _alphabet = "\n 0123456789abcdefghijklmnopqrstuvwxyz_,.!?=><+-".ToCharArray();
     private bool[] _bits = new bool[6];
@@ -22,6 +23,7 @@ public class BitArray : MonoBehaviour
     }
     public void Return()
     {
+        _monitor.AddChar(BitsToResultChar());
         ResetArray();
         UpdateArrayText();
         UpdateResultCharText();
