@@ -1969,7 +1969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _crosshair: {fileID: 67053176}
   _aimTransform: {fileID: 726229588}
-  _reachDistance: 2
+  _reachDistance: 3
   _searchMask:
     serializedVersion: 2
     m_Bits: 64
