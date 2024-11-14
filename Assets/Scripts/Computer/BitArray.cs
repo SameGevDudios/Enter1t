@@ -15,6 +15,8 @@ public class BitArray : MonoBehaviour
     public void AddOne()
     {
         BitIncrement();
+        if (BitsToInt() >= _alphabet.Length)
+            ResetArray();
         UpdateArrayText();
         UpdateResultCharText();
     }
