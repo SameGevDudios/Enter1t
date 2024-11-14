@@ -45,9 +45,9 @@ public class BitArray : MonoBehaviour
             }
         }
     }
-    public void UpdateArrayText() =>
+    private void UpdateArrayText() =>
         _arrayText.text = BitsToString();
-    public void UpdateResultCharText()
+    private void UpdateResultCharText()
     {
         char result = BitsToResultChar();
         switch (result)
