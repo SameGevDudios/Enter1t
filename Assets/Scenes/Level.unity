@@ -275,6 +275,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7ded75fa762f7624a9e9d4666e76b20b, type: 2}
+    - target: {fileID: -6322773619456557918, guid: e6653c9dcc5aebe4b9d6e01c7d8a2564, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -5169578811043067064, guid: e6653c9dcc5aebe4b9d6e01c7d8a2564, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -318,6 +322,10 @@ PrefabInstance:
     - target: {fileID: 5050422055867433376, guid: e6653c9dcc5aebe4b9d6e01c7d8a2564, type: 3}
       propertyPath: m_Name
       value: InputWire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117428953553911784, guid: e6653c9dcc5aebe4b9d6e01c7d8a2564, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6131704424268223489, guid: e6653c9dcc5aebe4b9d6e01c7d8a2564, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
