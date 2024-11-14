@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -6,7 +5,7 @@ public class BitArray : MonoBehaviour
 {
     [SerializeField] private Monitor _monitor;
     [SerializeField] private TMP_Text _arrayText, _resultText;
-    private char[] _alphabet = "\n 0123456789abcdefghijklmnopqrstuvwxyz_,.!?=><+-".ToCharArray();
+    private char[] _alphabet = "\n\t 0123456789abcdefghijklmnopqrstuvwxyz:()_,.!?+-=><".ToCharArray();
     private bool[] _bits = new bool[6];
 
     private void Start() =>
@@ -56,6 +55,9 @@ public class BitArray : MonoBehaviour
         {
             case '\n':
                 _resultText.text = "Enter";
+                break;
+            case '\t':
+                _resultText.text = "Tab";
                 break;
             case ' ':
                 _resultText.text = "Space";
