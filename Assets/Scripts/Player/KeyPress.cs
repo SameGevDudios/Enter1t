@@ -10,7 +10,7 @@ public class KeyPress : MonoBehaviour
     {
         if (KeyInRange())
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 PressKey();
             }
