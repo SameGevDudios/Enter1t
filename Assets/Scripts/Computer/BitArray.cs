@@ -22,9 +22,9 @@ public class BitArray : MonoBehaviour
     }
     public void Return()
     {
+        ResetArray();
         UpdateArrayText();
         UpdateResultCharText();
-        ResetArray();
     }
     private void BitIncrement()
     {
