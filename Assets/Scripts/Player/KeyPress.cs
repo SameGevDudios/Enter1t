@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class KeyPress : MonoBehaviour
 {
+    [SerializeField] private Transform _aimTransform;
     [SerializeField] private float _reachDistance;
     [SerializeField] private LayerMask _searchMask;
     private RaycastHit _hit;
@@ -17,7 +18,7 @@ public class KeyPress : MonoBehaviour
     }
     private bool KeyInRange()
     {
-        return Physics.Raycast(transform.position, transform.forward, out _hit, _reachDistance, _searchMask);
+        return Physics.Raycast(_aimTransform.position, _aimTransform.forward, out _hit, _reachDistance, _searchMask);
     }
     private void PressKey()
     {
