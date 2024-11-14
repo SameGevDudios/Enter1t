@@ -17,6 +17,11 @@ public class Monitor : MonoBehaviour
         _pointerActive = !_pointerActive;
         Invoke("ActivatePointer", _pointerFlickTimer);
     }
+    public void ResetText()
+    {
+        _message = "";
+        UpdateText(_message);
+    }
     public void AddChar(char newChar)
     {
         _message += newChar;
