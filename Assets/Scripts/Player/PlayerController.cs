@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
         _jumpForce = 5f;
 
     private float _verticalLookRotation, _currentSpeed;
-    private Vector3 _currentVelocity;
+    private Vector3 _movementDirection;
     private void Start()
     {
         LockCursor();
@@ -22,9 +22,12 @@ public class PlayerController : MonoBehaviour
         RotateCamera();
         CheckMoveModeInput();
         CheckMovementInput();
-        MovePlayer();
         if (Input.GetButtonDown("Jump") && IsGrounded())
             Jump();
+    }
+    private void FixedUpdate()
+    {
+        MovePlayer();
     }
     private void LockCursor()
     {
@@ -50,13 +53,14 @@ public class PlayerController : MonoBehaviour
     }
     private void CheckMovementInput() 
     {
-        _currentVelocity = 
-            Vector3.right * Input.GetAxis("Horizontal") +
-            Vector3.forward * Input.GetAxis("Vertical");
+        _movementDirection = 
+            transform.right * Input.GetAxis("Horizontal") +
+            transform.forward * Input.GetAxis("Vertical");
     }
 
     private void MovePlayer() =>
-           transform.Translate(_currentVelocity * _currentSpeed * Time.deltaTime);
+           _rigidbody.linearVelocity = _movementDirection * _currentSpeed + 
+        Vector3.up * _rigidbody.linearVelocity.y;
     private void Jump() =>
         _rigidbody.linearVelocity = new Vector3(_rigidbody.linearVelocity.x, _jumpForce, _rigidbody.linearVelocity.z);
     private bool IsGrounded() =>
