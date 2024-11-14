@@ -779,7 +779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5966400305d18f340b6a89e3588b238e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 1922707069}
+  _arrayText: {fileID: 1922707069}
+  _resultText: {fileID: 836350907}
 --- !u!4 &562587626
 Transform:
   m_ObjectHideFlags: 0
@@ -1388,7 +1389,7 @@ GameObject:
   - component: {fileID: 836350908}
   - component: {fileID: 836350907}
   m_Layer: 0
-  m_Name: CurrentCharText
+  m_Name: ResultCharText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
