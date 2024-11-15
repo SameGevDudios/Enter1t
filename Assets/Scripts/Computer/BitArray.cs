@@ -5,7 +5,7 @@ public class BitArray : MonoBehaviour
 {
     [SerializeField] private Monitor _monitor;
     [SerializeField] private TMP_Text _arrayText, _resultText;
-    private char[] _alphabet = "\n\t 0123456789abcdefghijklmnopqrstuvwxyz:()_,.!?+-=><".ToCharArray();
+    private char[] _alphabet = "\n\t 0123456789abcdefghijklmnopqrstuvwxyz:;()\'\"_,.!?+-=><".ToCharArray();
     private bool[] _bits = new bool[6];
 
     private void Start() =>
