@@ -2724,7 +2724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press [TAB] to unpause
+  m_text: Press [esc] to unpause
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1578420f30847534882b4c72583f8012, type: 2}
   m_sharedMaterial: {fileID: 9206368030622996346, guid: 1578420f30847534882b4c72583f8012, type: 2}
