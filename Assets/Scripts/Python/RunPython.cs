@@ -4,7 +4,6 @@ using Microsoft.Scripting.Hosting;
 
 public class RunPython : MonoBehaviour
 {
-
     private ScriptEngine _scriptEngine;
     private ScriptScope _scriptScope;
 
