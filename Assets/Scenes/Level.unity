@@ -2292,9 +2292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4189084e850e0429a57ad15cdfac67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _python: {fileID: 0}
-  _messageText: {fileID: 0}
-  _runText: {fileID: 0}
+  _python: {fileID: 1957748231}
+  _messageText: {fileID: 563033196}
+  _runText: {fileID: 232395346}
   _pointerFlickTimer: 0.5
 --- !u!4 &856791287
 Transform:
