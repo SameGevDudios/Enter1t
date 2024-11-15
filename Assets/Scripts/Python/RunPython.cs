@@ -17,25 +17,33 @@ public class RunPython : MonoBehaviour
     private void Start()
     {
         InitializePython();
-        RunCode("print('Hello Unity!')");
+        print(RunCode("print('Hello Unity!')"));
     }
     private void InitializePython()
     {
         _scriptEngine = Python.CreateEngine();
         _scriptScope = _scriptEngine.CreateScope();
     }
-    public void RunCode(string code)
+    public string RunCode(string code)
     {
         try
         {
-            ScriptSource source = _scriptEngine.CreateScriptSourceFromString(code);
-            source.Compile();
-            source.Execute(_scriptScope);
-            Debug.Log("IronPython Script Executed Successfully.");
+            // Redirect the standard output to capture printed text
+            var stream = new System.IO.MemoryStream();
+            var writer = new System.IO.StreamWriter(stream);
+            _scriptEngine.Runtime.IO.SetOutput(stream, writer);
+
+            _scriptEngine.Execute(code, _scriptScope);
+
+            writer.Flush();
+            stream.Seek(0, System.IO.SeekOrigin.Begin);
+            var reader = new System.IO.StreamReader(stream);
+            return reader.ReadToEnd().Trim();
         }
         catch (System.Exception ex)
         {
-            Debug.LogError("Error executing Python script: " + ex.Message);
+            Debug.LogError("Python Execution Error: " + ex.Message);
+            return null;
         }
     }
 }
