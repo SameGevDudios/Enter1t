@@ -4,7 +4,7 @@ using TMPro;
 public class Monitor : MonoBehaviour
 {
     [SerializeField] private RunPython _python;
-    [SerializeField] private TMP_Text _text;
+    [SerializeField] private TMP_Text _messageText, _runText;
     [SerializeField] private float _pointerFlickTimer;
     private string _message;
     private bool _pointerActive;
@@ -23,7 +23,7 @@ public class Monitor : MonoBehaviour
         Invoke("ActivatePointer", _pointerFlickTimer);
     }
     public void RunProgram() =>
-        _python.RunCode(_message);
+        _runText.text = _python.RunCode(_message);
     public void ResetText()
     {
         _message = "";
@@ -35,6 +35,6 @@ public class Monitor : MonoBehaviour
         UpdateText(_message);
     }
     private void UpdateText(string newMessage) =>
-        _text.text = newMessage;
+        _messageText.text = newMessage;
 
 }
