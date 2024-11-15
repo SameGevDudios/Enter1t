@@ -22,6 +22,8 @@ public class Monitor : MonoBehaviour
         _pointerActive = !_pointerActive;
         Invoke("ActivatePointer", _pointerFlickTimer);
     }
+    public void RunProgram() =>
+        _python.RunCode(_message);
     public void ResetText()
     {
         _message = "";
