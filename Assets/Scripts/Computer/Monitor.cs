@@ -10,7 +10,10 @@ public class Monitor : MonoBehaviour
     private bool _pointerActive;
     private void Start()
     {
-        _python.RunCode("print('Provide letters and digits using bit array and run python code by pressing [Run] button')");
+        _message = "print('Provide letters and digits using bit array." +
+            "\nUse [Run] button to run python code" +
+            "\nUse [Reset] button to clear monitor')";
+        UpdateText(_message);
         ActivatePointer();
     }
     private void ActivatePointer()
