@@ -9,7 +9,7 @@ public class PauseManager : MonoBehaviour
         CheckPause();
     private void CheckPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
             Pause();
     }
     private void Pause()
