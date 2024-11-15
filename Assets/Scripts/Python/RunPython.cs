@@ -17,7 +17,6 @@ public class RunPython : MonoBehaviour
     private void Start()
     {
         InitializePython();
-        print(RunCode("print('Hello Unity!')"));
     }
     private void InitializePython()
     {
@@ -42,8 +41,7 @@ public class RunPython : MonoBehaviour
         }
         catch (System.Exception ex)
         {
-            Debug.LogError("Python Execution Error: " + ex.Message);
-            return null;
+            return "Python Execution Error: " + ex.Message;
         }
     }
 }
