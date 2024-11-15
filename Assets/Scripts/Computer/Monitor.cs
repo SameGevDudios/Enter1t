@@ -3,13 +3,14 @@ using TMPro;
 
 public class Monitor : MonoBehaviour
 {
+    [SerializeField] private RunPython _python;
     [SerializeField] private TMP_Text _text;
     [SerializeField] private float _pointerFlickTimer;
     private string _message;
     private bool _pointerActive;
     private void Start()
     {
-        RunPython.Instance.RunCode("print('Provide letters and digits using bit array and run python code by pressing [Run] button')");
+        _python.RunCode("print('Provide letters and digits using bit array and run python code by pressing [Run] button')");
         ActivatePointer();
     }
     private void ActivatePointer()
