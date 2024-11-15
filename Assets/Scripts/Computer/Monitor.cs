@@ -10,9 +10,9 @@ public class Monitor : MonoBehaviour
     private bool _pointerActive;
     private void Start()
     {
-        _message = "print('Provide letters and digits using bit array." +
-            "\nUse [Run] button to run python code" +
-            "\nUse [Reset] button to clear monitor')";
+        _message = "print('Provide letters and digits using bit array')" +
+            "\nprint('Use [Run] button to run python code')" +
+            "\nprint('Use [Reset] button to clear monitor')";
         UpdateMonitorText(_message);
         ActivatePointer();
     }
