@@ -12,11 +12,6 @@ public class PlayerController : MonoBehaviour
 
     private float _verticalLookRotation, _currentSpeed;
     private Vector3 _movementDirection;
-    private void Start()
-    {
-        LockCursor();
-        _currentSpeed = _walkSpeed;
-    }
     private void Update()
     {
         RotateCamera();

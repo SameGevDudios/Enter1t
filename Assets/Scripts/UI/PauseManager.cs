@@ -17,5 +17,6 @@ public class PauseManager : MonoBehaviour
         _paused = !_paused;
         _playerMovement.enabled = !_paused;
         _pausePanel.SetActive(_paused);
+        CursorController.Instance.ActivateCursor(_paused);
     }
 }
