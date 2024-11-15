@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 232395347}
   - component: {fileID: 232395346}
   m_Layer: 5
-  m_Name: Python results
+  m_Name: PythonResults
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2292,7 +2292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4189084e850e0429a57ad15cdfac67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 563033196}
+  _python: {fileID: 0}
+  _messageText: {fileID: 0}
+  _runText: {fileID: 0}
   _pointerFlickTimer: 0.5
 --- !u!4 &856791287
 Transform:
