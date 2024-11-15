@@ -13,6 +13,7 @@ public class Monitor : MonoBehaviour
         _message = "print('[WASD] to move')" +
             "\nprint('[Left Mouse Button] to press buttons')" +
             "\nprint('[Space] to jump')" +
+            "\nprint('[TAB] to pause')" +
             "\nprint('Provide letters and digits using bit array')" +
             "\nprint('Use [Run] button to run python code')" +
             "\nprint('Use [Reset] button to clear monitor')";
