@@ -2322,7 +2322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _python: {fileID: 1957748231}
-  _messageText: {fileID: 563033196}
+  _monitorText: {fileID: 563033196}
   _runText: {fileID: 232395346}
   _pointerFlickTimer: 0.5
 --- !u!4 &856791287

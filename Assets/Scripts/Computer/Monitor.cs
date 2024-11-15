@@ -4,7 +4,7 @@ using TMPro;
 public class Monitor : MonoBehaviour
 {
     [SerializeField] private RunPython _python;
-    [SerializeField] private TMP_Text _messageText, _runText;
+    [SerializeField] private TMP_Text _monitorText, _runText;
     [SerializeField] private float _pointerFlickTimer;
     private string _message;
     private bool _pointerActive;
@@ -13,12 +13,12 @@ public class Monitor : MonoBehaviour
         _message = "print('Provide letters and digits using bit array." +
             "\nUse [Run] button to run python code" +
             "\nUse [Reset] button to clear monitor')";
-        UpdateText(_message);
+        UpdateMonitorText(_message);
         ActivatePointer();
     }
     private void ActivatePointer()
     {
-        UpdateText(_message + (_pointerActive ? '|' : ""));
+        UpdateMonitorText(_message + (_pointerActive ? '|' : ""));
         _pointerActive = !_pointerActive;
         Invoke("ActivatePointer", _pointerFlickTimer);
     }
@@ -27,14 +27,17 @@ public class Monitor : MonoBehaviour
     public void ResetText()
     {
         _message = "";
-        UpdateText(_message);
+        UpdateMonitorText(_message);
+        UpdateRunText("");
     }
     public void AddChar(char newChar)
     {
         _message += newChar;
-        UpdateText(_message);
+        UpdateMonitorText(_message);
     }
-    private void UpdateText(string newMessage) =>
-        _messageText.text = newMessage;
+    private void UpdateMonitorText(string newMessage) =>
+        _monitorText.text = newMessage;
+    private void UpdateRunText(string newResults) =>
+        _runText.text = newResults;
 
 }
