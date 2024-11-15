@@ -10,7 +10,10 @@ public class Monitor : MonoBehaviour
     private bool _pointerActive;
     private void Start()
     {
-        _message = "print('Provide letters and digits using bit array')" +
+        _message = "print('[WASD] to move')" +
+            "\nprint('[Left Mouse Button] to press buttons')" +
+            "\nprint('[Space] to jump')" +
+            "\nprint('Provide letters and digits using bit array')" +
             "\nprint('Use [Run] button to run python code')" +
             "\nprint('Use [Reset] button to clear monitor')";
         UpdateMonitorText(_message);
