@@ -1,0 +1,39 @@
+using UnityEngine;
+
+public class MovementSway : MonoBehaviour
+{
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private float _velocityThreshold, _idleSpeed, _swaySpeed,
+        _horizontalSwayDistance, _verticalSwayDistance, _verticalSharpness;
+    private Vector3 _startPosition;
+    private float _function;
+    private int direction = 1;
+    private void Start() =>
+        _startPosition = transform.localPosition;
+    private void Update()
+    {
+        Vector3 movement = new Vector3(_rigidbody.linearVelocity.x, 0, _rigidbody.linearVelocity.z);
+        ProcessMovement(movement, movement.magnitude);
+    }
+    private void ProcessMovement(Vector3 movement, float baseSpeed)
+    {
+        if (movement.magnitude > _velocityThreshold)
+        {
+            _function += Mathf.PI * _swaySpeed * baseSpeed * direction * Time.deltaTime;
+            if (_function < 0 || _function > Mathf.PI)
+                direction *= 1;
+            ApplySway();
+        }
+        else
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, _startPosition, _idleSpeed * Time.deltaTime);
+            _function = 0;
+        }
+    }
+    private void ApplySway()
+    {
+        transform.localPosition = _startPosition + 
+            Vector3.right * Mathf.Cos(_function) * _horizontalSwayDistance +
+            Vector3.up * Mathf.Pow(Mathf.Sin(_function + Mathf.PI), _verticalSharpness) * _verticalSwayDistance;
+    }
+}
