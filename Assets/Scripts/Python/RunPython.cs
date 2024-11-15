@@ -8,10 +8,8 @@ public class RunPython : MonoBehaviour
     private ScriptEngine _scriptEngine;
     private ScriptScope _scriptScope;
 
-    private void Start()
-    {
+    private void Start() =>
         InitializePython();
-    }
     private void InitializePython()
     {
         _scriptEngine = Python.CreateEngine();

@@ -20,10 +20,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
             Jump();
     }
-    private void FixedUpdate()
-    {
+    private void FixedUpdate() =>
         MovePlayer();
-    }
     private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
